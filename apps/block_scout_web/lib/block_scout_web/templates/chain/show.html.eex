@@ -1,0 +1,154 @@
+<div class='dashboard-banner-container' data-page="chain-details" style="background-color: #04223F" >
+  <div class="container" style="background-color: #04223E" >
+    <div class="dashboard-banner"  >
+      <!-- Graph and legend -->
+      
+      <!-- Stats -->
+      <div class="dashboard-banner-network-plain-container" style="background-color: #14395E; justify-content: center;" >
+        <div class="dashboard-banner-network-stats" >
+          <%= case @average_block_time do %>
+            <% {:error, :disabled} -> %>
+              <%= nil %>
+            <% average_block_time -> %>
+              <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
+
+          
+                <span class="dashboard-banner-network-stats-label" >
+                <%= render BlockScoutWeb.IconsView, "_time_icon.html" %>
+                  &nbsp Average Block Time
+                </span>
+                <span class="dashboard-banner-network-stats-value" data-selector="Average-block-time" style="font-weight: bold;font-family: Arial, Helvetica, sans-serif; font-style: normal; font-weight: bold; font-size: 24px; line-height: 36px;  text-transform: capitalize; ">
+                  <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                </span>
+
+              </div>
+          <% end %>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
+            <span class="dashboard-banner-network-stats-label">
+            <%= render BlockScoutWeb.IconsView, "_transaction1_icon.html" %>
+              &nbsp Total transactions
+            </span>
+            <div style="display: flex;">
+              <span class="dashboard-banner-network-stats-value" data-selector="transaction-count" style="font-weight: bold;">
+                <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
+              </span>
+              <%= if @total_gas_usage > 0 do %>
+                <span
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-html="true"
+                  data-template="<div class='tooltip tooltip-inversed-color tooltip-gas-usage' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>"
+                  title="<div class='custom-tooltip-header'>Total gas used</div><div class='custom-tooltip-description'><b><%= BlockScoutWeb.Cldr.Number.to_string!(@total_gas_usage, format: "#,###") %><b></div>"
+                  class="custom-tooltip-total-transactions">
+                  <i style="color: #ffffff;" class="fa fa-info-circle ml-2"></i>
+                </span>
+              <% end %>
+            </div>
+          </div>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
+            <span class="dashboard-banner-network-stats-label">
+              <%= render BlockScoutWeb.IconsView, "_block1_icon.html" %>
+              &nbsp Total blocks
+            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="block-count" style="font-weight: bold;">
+              <%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
+            </span>
+          </div>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4" >
+            <span class="dashboard-banner-network-stats-label">
+            <%= render BlockScoutWeb.IconsView, "_wallet_icon.html" %>
+              &nbsp Wallet addresses
+            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="address-count" style="font-weight: bold;">
+              <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/chart-loader.js") %>"></script>
+  <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/chain.js") %>"></script>
+</div>
+<section class="container" >
+<br><br><br>
+  <div class="card card-chain-blocks" style="background-color: #ffff; box-shadow: 0 0 5px #d9dbe8;" >
+    <div class="card-body" >
+      <%= link(gettext("View All Blocks"), to: block_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
+      <h2 class="card-title"><%= gettext "Blocks" %></h2>
+      <div class="row" data-selector="chain-block-list" data-url="<%= chain_blocks_path(@conn, :chain_blocks) %>">
+        <button data-selector="error-message" class="alert alert-danger col-12 text-left" style="display: none;">
+          <span class="alert-link">
+            <%= gettext "Something went wrong, click to reload." %>
+          </span>
+        </button>
+        <div hidden data-selector="loading-message" class="col-lg-3" >
+         <div data-selector="chain-block">
+           <div class="tile tile-type-block n-p d-flex flex-column" >
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a>
+             <div class="tile-bottom-contents" >
+               <div class="dark-block-loader"></div>
+               <div class="dark-block-loader"></div>
+             </div>
+           </div>
+         </div>
+        </div>
+        <div hidden data-selector="loading-message" class="col-lg-3" >
+         <div data-selector="chain-block">
+           <div class="tile tile-type-block n-p d-flex flex-column" >
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a> 
+             <div class="tile-bottom-contents" >
+               <div class="dark-block-loader"></div>
+               <div class="dark-block-loader"></div>
+             </div>
+           </div>
+         </div>
+        </div>
+        <div hidden data-selector="loading-message" class="col-lg-3" >
+         <div data-selector="chain-block">
+           <div class="tile tile-type-block n-p d-flex flex-column" >
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a> 
+             <div class="tile-bottom-contents">
+               <div class="dark-block-loader"></div>
+               <div class="dark-block-loader"></div>
+             </div>
+           </div>
+         </div>
+        </div>
+        <div hidden data-selector="loading-message" class="col-lg-3" >
+         <div data-selector="chain-block">
+           <div class="tile tile-type-block n-p d-flex flex-column" >
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a>
+             <div class="tile-bottom-contents" >
+              <div class="dark-block-loader"></div>
+              <div class="dark-block-loader"></div>
+            </div>
+           </div>
+         </div>
+        </div>   
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-chain-transactions" style="background-color: #ffff; box-shadow: 0 0 5px #d9dbe8; border-radius: 10px;" >
+    <div class="card-body" style="background-color: #ffff; border-radius: 10px;" >
+      <%= link(gettext("View All Transactions"), to: transaction_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
+      <h2 class="card-title lg-card-title"><%= gettext "Transactions" %></h2>
+      <div data-selector="channel-batching-message" style="display: none;">
+        <div data-selector="reload-button" class="alert alert-info">
+          <a href="#" class="alert-link"><span data-selector="channel-batching-count"></span> <%= gettext "More transactions have come in" %></a>
+        </div>
+      </div>
+      <span data-selector="transactions-list" data-transactions-path="<%= @transactions_path %>">
+        <button data-selector="error-message" class="alert alert-danger col-12 text-left" style="display: none;">
+          <span class="alert-link">
+            <%= gettext "Something went wrong, click to retry." %>
+          </span>
+        </button>
+        <div hidden data-selector="loading-message">
+          <%= render BlockScoutWeb.CommonComponentsView, "_tile-loader.html" %>
+        </div>
+      </span>
+    </div>
+  </div>
+</section>

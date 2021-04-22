@@ -1,0 +1,29 @@
+<div class="col-lg-3 fade-up-blocks-chain" data-selector="chain-block" data-block-number="<%= @block.number %>">
+  <div class="tile tile-type-block n-p d-flex flex-column" style="background-color: #ffff;border-color: #ffff; border-left-color: #405de0;  box-shadow: 0px 0px 4px rgba(40, 34, 63, 0.2); border-radius: 8px;">
+    <%= link(
+          @block,
+          class: "tile-title",
+          to: block_path(BlockScoutWeb.Endpoint, :show, @block),
+          "data-selector": "block-number"
+        ) %>
+    <div class="tile-bottom-contents" style="background-color:#fafbfd; ">
+      <div class="tile-transactions">
+        <span class="mr-2"><%= gettext("%{count} Transactions", count: Enum.count(@block.transactions)) %></span>
+        <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
+      </div>
+      <div class="text-truncate">
+        <%= gettext "Miner" %>
+        <%= render BlockScoutWeb.AddressView,
+          "_link.html",
+          address: @block.miner,
+          contract: false,
+          use_custom_tooltip: false %>
+      </div>
+      <%= if BlockScoutWeb.BlockView.show_reward?(@block.rewards) do %>
+        <div class="text-truncate">
+          <%= gettext "Reward" %> <%= BlockScoutWeb.BlockView.combined_rewards_value(@block) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
