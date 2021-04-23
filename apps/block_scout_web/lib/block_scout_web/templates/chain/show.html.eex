@@ -1,5 +1,5 @@
 <div class='dashboard-banner-container' data-page="chain-details" style="background-color: #04223F" >
-  <div class="container" style="background-color: #04223E" >
+  <div class="container" style="background-color: #04223E;     height: inherit;" ; >
     <div class="dashboard-banner"  >
       <!-- Graph and legend -->
       
@@ -10,28 +10,35 @@
             <% {:error, :disabled} -> %>
               <%= nil %>
             <% average_block_time -> %>
-              <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
-
-          
-                <span class="dashboard-banner-network-stats-label" >
+              <div style="margin-right: 50px;" >
+                
+                <span style="display: inline-block;">
+                <span style="float:left; position: relative;">
                 <%= render BlockScoutWeb.IconsView, "_time_icon.html" %>
-                  &nbsp Average Block Time
                 </span>
-                <span class="dashboard-banner-network-stats-value" data-selector="Average-block-time" style="font-weight: bold;font-family: Arial, Helvetica, sans-serif; font-style: normal; font-weight: bold; font-size: 24px; line-height: 36px;  text-transform: capitalize; ">
-                  <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                
+
+                  <span class="dashboard-banner-network-stats-label" style="color: #ffff; display: inline-block; padding-left: 10px;" >
+                    Average Block Time
+                    <p class="dashboard-banner-network-stats-value" data-selector="Average-block-time" style="font-weight: bold;  font-weight: bold; font-size: 24px;  text-transform: capitalize; "><%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %></p>
+                  </span>
+
+                    
                 </span>
 
               </div>
           <% end %>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
-            <span class="dashboard-banner-network-stats-label">
-            <%= render BlockScoutWeb.IconsView, "_transaction1_icon.html" %>
-              &nbsp Total transactions
+          <div >
+
+            <span style="display: inline-block;">
+
+            <span style="float:left; position: relative;">
+            <%= render BlockScoutWeb.IconsView, "_transaction1_icon.html" %>  
             </span>
-            <div style="display: flex;">
-              <span class="dashboard-banner-network-stats-value" data-selector="transaction-count" style="font-weight: bold;">
-                <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
-              </span>
+
+            <span class="dashboard-banner-network-stats-label" style="color: #ffff; display: inline-block; padding-left: 10px;" >
+              Total transactions
+              <p class="dashboard-banner-network-stats-value" data-selector="Total-transactions" style="font-weight: bold;  font-weight: bold; font-size: 24px;  text-transform: capitalize; "><%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
               <%= if @total_gas_usage > 0 do %>
                 <span
                   data-toggle="tooltip"
@@ -43,24 +50,36 @@
                   <i style="color: #ffffff;" class="fa fa-info-circle ml-2"></i>
                 </span>
               <% end %>
-            </div>
+              </p>
+            </span>
+            </span>
           </div>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
-            <span class="dashboard-banner-network-stats-label">
+          <div >
+            <span style="display: inline-block;">
+
+            <span style="float:left; position: relative;">
               <%= render BlockScoutWeb.IconsView, "_block1_icon.html" %>
-              &nbsp Total blocks
+             
             </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="block-count" style="font-weight: bold;">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
+            <span class="dashboard-banner-network-stats-label" style="color: #ffff; display: inline-block; padding-left: 10px;">
+              Total transactions
+              <p class="dashboard-banner-network-stats-value" data-selector="Total-transactions" style="font-weight: bold;  font-weight: bold; font-size: 24px;  text-transform: capitalize; "><%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
+            </p>
+            </span>
             </span>
           </div>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4" >
-            <span class="dashboard-banner-network-stats-label">
+          <div  >
+            <span style="display: inline-block;">
+
+            <span style="float:left; position: relative;">
             <%= render BlockScoutWeb.IconsView, "_wallet_icon.html" %>
-              &nbsp Wallet addresses
             </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="address-count" style="font-weight: bold;">
+            <span class="dashboard-banner-network-stats-label" style="color: #ffff; display: inline-block; padding-left: 10px;">
+            Wallet addresses
+            <p class="dashboard-banner-network-stats-value" data-selector="Total-transactions" style="font-weight: bold;  font-weight: bold; font-size: 24px;  text-transform: capitalize; ">
               <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
+            </p>
+            </span>
             </span>
           </div>
         </div>
@@ -72,10 +91,23 @@
 </div>
 <section class="container" >
 <br><br><br>
-  <div class="card card-chain-blocks" style="background-color: #ffff; box-shadow: 0 0 5px #d9dbe8;" >
-    <div class="card-body" >
+  <div class="card card-chain-blocks" style="background-color: #ffff; box-shadow: 0 0 2px #d9dbe8;" >
+    <div class="card-body" style="border-radius: 8px;" >
       <%= link(gettext("View All Blocks"), to: block_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
-      <h2 class="card-title"><%= gettext "Blocks" %></h2>
+        <div style="padding-bottom: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ececef;">
+              
+
+              <span style="float:left; position: relative;">
+                <%= render BlockScoutWeb.IconsView, "_block1_icon.html" %>
+              
+              </span>
+              <span style="color: #ffff; display: inline-block; padding-left: 10px;">
+                
+                <p style="font-weight: bold; padding-top: 6px;  font-weight: bold; font-size: 24px;  text-transform: capitalize; color: black; ">Blocks</p>
+              </span>
+        </div>
       <div class="row" data-selector="chain-block-list" data-url="<%= chain_blocks_path(@conn, :chain_blocks) %>">
         <button data-selector="error-message" class="alert alert-danger col-12 text-left" style="display: none;">
           <span class="alert-link">

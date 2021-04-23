@@ -1,6 +1,12 @@
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 469.341 469.341" style="enable-background:new 0 0 469.341 469.341;filter: invert(1);" xml:space="preserve" width="20" height="20">
+	 viewBox="0 0 469.341 469.341" style="enable-background:new 0 0 469.341 469.341;invert(0);
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    fill: #60da9d;
+    background-color: #04223d;" xml:space="preserve" width="20" height="20">
 <g>
 	<g>
 		<g>
