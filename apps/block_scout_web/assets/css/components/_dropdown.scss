@@ -36,7 +36,8 @@ $dropdown-menu-item-hover-background: rgba($secondary, 0.1) !default;
 }
 
 .dropdown-item {
-  color: $dropdown-menu-item-color;
+  color: black;
+  background-color: rgb(255, 255, 255);
   font-size: 12px;
   padding: 10px 20px;
   transition: $transition-cont;
@@ -46,8 +47,8 @@ $dropdown-menu-item-hover-background: rgba($secondary, 0.1) !default;
     &.active,
     &:hover,
     &:focus {
-      background-color: $dropdown-menu-item-hover-background;
-      color: $dropdown-menu-item-hover-color;
+      background-color: #405de0;
+      color: #ffff;
 
       .external-link-icon {
         path {
