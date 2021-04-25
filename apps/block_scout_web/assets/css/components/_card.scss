@@ -12,7 +12,8 @@ $card-tab-icon-color-active: #3C50E0 !default;
   background-color: $card-background-color;
   border-radius: $card-default-border-radius;
   border: none;
-  box-shadow: 0 0 30px 0 rgba(202, 199, 226, 0.5);
+  box-shadow: 0 0 2px #d9dbe8;
+  border-radius: 10px;
   margin-bottom: $common-container-margin;
 
   .block-details-row {
@@ -155,6 +156,7 @@ $card-tab-icon-color-active: #3C50E0 !default;
 
 .card-body {
   padding: $card-horizontal-padding;
+  border-radius: 10px;
   background-color: #fff;
 }
 

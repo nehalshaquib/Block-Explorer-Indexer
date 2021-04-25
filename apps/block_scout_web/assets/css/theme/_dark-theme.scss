@@ -280,14 +280,17 @@ $dark-stakes-banned-background: #151e47;
 
 	// pagination
 	.pagination-container .pagination .page-link {
-		color: $labels-dark;
-		border-color: $dark-light;
-		background-color: $dark-light;
+		color: #405de0;
+		border-color:#405de0;
+		background-color: #8ebdfb;
+		border-radius: 6px;
 		&:not(.no-hover):hover {
-			color: #3C50E0;
-			background-color: $dark-primary;
+			color: #8ebdfb;
+			border-color: #405de0;
+			background-color: #405de0;
+			border-radius: 6px;
 			path {
-				fill: #fff;
+				fill: #8ebdfb;
 			}
 		}
 		&[disabled] {

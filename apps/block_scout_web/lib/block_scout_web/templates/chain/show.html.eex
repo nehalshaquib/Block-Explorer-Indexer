@@ -1,4 +1,4 @@
-<div class='dashboard-banner-container' data-page="chain-details" style="background-color: #04223F; box-shadow: 0 0 2px #d9dbe8;" >
+<div class='dashboard-banner-container' data-page="chain-details" style="background-color: #04223F; box-shadow: 0 0 2px #d9dbe8;"  >
   <div class="container" style="background-color: #04223E;     height: inherit;" ; >
     <div class="dashboard-banner"  >
       <!-- Graph and legend -->
