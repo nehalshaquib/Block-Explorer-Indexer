@@ -1,0 +1,27 @@
+export DATABASE_URL=postgresql://postgres:password@localhost:5432/blockscout
+
+-------
+mix phx.gen.secret
+-------
+
+export SECRET_KEY_BASE=wSOjhKmpIwQ5sxzpumkkhJLHtl/kVTPCR38rFDYT0ZiPkE0CRhYyHW1PUcLIgUuu
+
+--------
+mix phx.digest.clean
+--------
+
+export NETWORK=Gather
+
+export SUBNETWORK=Testnet3
+
+export LOGO=/images/gatherFull.png
+
+export LOGO_FOOTER=/images/gatherFull.png
+
+export ETHEREUM_JSONRPC_VARIANT=geth
+
+export ETHEREUM_JSONRPC_HTTP_URL=https://testnet3.gather.network
+
+export ETHEREUM_JSONRPC_WS_URL=wss://testnet3.gather.network/ws
+
+export COIN=gather

@@ -1,12 +1,24 @@
 <% status = transaction_status(@transaction) %>
-<div class="tile tile-type-<%= type_suffix(@transaction) %> fade-in <%= status_class(@transaction) %>" data-test="<%= type_suffix(@transaction) %>" data-identifier-hash="<%= @transaction.hash %>">
-  <div class="row tile-body" data-selector="token-transfers-toggle" data-test="chain_transaction">
+<div class="tile tile-type-<%= type_suffix(@transaction) %> fade-in <%= status_class(@transaction) %>" data-test="<%= type_suffix(@transaction) %>" data-identifier-hash="<%= @transaction.hash %>" style=" border-left:none;">
+  <div class="row tile-body" data-selector="token-transfers-toggle" data-test="chain_transaction" >
     <!-- Color Block -->
-    <div class="tile-transaction-type-block col-md-2 d-flex flex-row flex-md-column">
-      <span class="tile-label" data-test="transaction_type">
+    <div class="tile-transaction-type-block col-md-2 d-flex flex-row flex-md-column" style="border-left: 4px solid #405de0; border-radius: 6px; border-color: #405de0; background-color: #f8faff;">
+      <span class="tile-label" data-test="transaction_type" style="    color: #2f80ed;
+    background-color: #dcebff;
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;">
         <%= transaction_display_type(@transaction) %>
       </span>
-      <span class="tile-status-label ml-2 ml-md-0" data-test="transaction_status">
+      <span class="tile-status-label ml-2 ml-md-0" data-test="transaction_status" style="color: #3fd69d;
+    background-color: #d4f7eb;
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;">
         <%= if status_class(@transaction) == "tile-status--pending" do %>
           <div class="loading-spinner-small">
             <span class="loading-spinner-block-1"></span>

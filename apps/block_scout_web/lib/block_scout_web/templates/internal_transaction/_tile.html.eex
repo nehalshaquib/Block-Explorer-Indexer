@@ -1,4 +1,4 @@
-<div class="tile tile-type-internal-transaction fade-in" data-test="internal_transaction" data-key="<%= @internal_transaction.transaction_hash %>_<%= @internal_transaction.index %>" data-internal-transaction-transaction-hash="<%= @internal_transaction.transaction_hash %>" data-internal-transaction-index="<%= @internal_transaction.index %>">
+<div class="tile tile-type-internal-transaction fade-in" data-test="internal_transaction" data-key="<%= @internal_transaction.transaction_hash %>_<%= @internal_transaction.index %>" data-internal-transaction-transaction-hash="<%= @internal_transaction.transaction_hash %>" data-internal-transaction-index="<%= @internal_transaction.index %>" style=" border-left:4px solid #007bff;">
   <div class="row tile-body">
     <!-- Color Block -->
     <div class="tile-transaction-type-block col-md-2 d-flex flex-row flex-md-column">

@@ -92,11 +92,14 @@ $dark-stakes-banned-background: #151e47;
 		color: #3C50E0;
 	}
 	.footer-list ul li::before {
-		background-color: $dark-secondary;
+		background-color: #ffff;
 		list-style-type: none;
+		color: #ffff;
 	}
 	.footer-list ul {
+		background-color: #ffff;
 		list-style-type: none;
+		color: #ffff;
 	}
 
 	// hero stats
@@ -166,7 +169,7 @@ $dark-stakes-banned-background: #151e47;
 
 	// Components
 	a {
-		color: $dark-primary;
+		color: #405de0;
 	}
 
 	.tile {
@@ -185,7 +188,7 @@ $dark-stakes-banned-background: #151e47;
 			color: #405de0;
 		}
 		.tile-transaction-type-block {
-			background-color: #ffff;
+			background-color: #f6f9fd;
 		}
 	}
 	.tile-bottom-contents {
@@ -228,11 +231,11 @@ $dark-stakes-banned-background: #151e47;
 		color: $dark-primary;
 	}
 	.tile.tile-type-block .tile-transaction-type-block {
-		border-right-color: #ffff;
-		border-top-color: #ffff;
-		border-bottom-color: #ffff;
+		border-right-color: #405de0;
+		border-top-color: #405de0;
+		border-bottom-color: #405de0;
 		border-left: #405de0;
-		background-color: #fff;
+		background-color: #bfc9f8;
 		box-shadow: 0 0 5px #d9dbe8;
 	}
 	.tile .progress {
@@ -242,7 +245,7 @@ $dark-stakes-banned-background: #151e47;
 		background-color: $dark-primary;
 	}
 	.tile .tile-title-lg:not([data-balance-change-sign]) {
-		color: $dark-primary;
+		color: #405de0;
 	}
 
 	// btns
@@ -326,7 +329,7 @@ $dark-stakes-banned-background: #151e47;
 	.stakes-table-body {
 		.refresh-informer {
 			a {
-				color: inherit;
+				color: #405de0;
 			}
 		}
 	}

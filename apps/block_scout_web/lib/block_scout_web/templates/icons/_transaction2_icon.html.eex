@@ -1,0 +1,7 @@
+<svg height="512" viewBox="0 0 512 512" width="20" style="filter: invert(0);
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    fill: #405de0;
+    background-color: #f9fbff;" xmlns="http://www.w3.org/2000/svg"><g id="Solid"><path d="m48 192h358.059l-39.03 39.029a24 24 0 0 0 33.942 33.942l80-80a24 24 0 0 0 0-33.942l-80-80a24 24 0 0 0 -33.942 33.942l39.03 39.029h-358.059a24 24 0 0 0 0 48z"/><path d="m464 320h-358.059l39.03-39.029a24 24 0 0 0 -33.942-33.942l-80 80a24 24 0 0 0 0 33.942l80 80a24 24 0 0 0 33.942-33.942l-39.03-39.029h358.059a24 24 0 0 0 0-48z"/></g></svg>

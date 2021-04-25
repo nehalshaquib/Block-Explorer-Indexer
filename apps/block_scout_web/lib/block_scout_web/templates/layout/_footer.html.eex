@@ -35,23 +35,25 @@
           </a>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list" style="padding-left: 80px;" >
-        <h2>Company</h2>
-        <ul>
-          <li><a style="color: #ffff;" href="https://gather.network/index.html" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Home") %></a></li>
-          <li><a style="color: #ffff;" href="https://gather.network/technology.html" rel="noreferrer" class="footer-link"><%= gettext("Technology") %></a></li>
-          <li><a style="color: #ffff;" href="https://gather.network/about-us.html" rel="noreferrer" class="footer-link"><%= gettext("About Us") %></a></li>
-          <li><a style="color: #ffff;" href="https://gather.network/contact-us.html" rel="noreferrer" class="footer-link"><%= gettext("Contact") %></a></li>
+      <div  style="padding-right: 130px; padding-left: 80px;" >
+        
+        <ul style="list-style-type: none;">
+          <h2 style="font-weight:300">Company</h2>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/index.html" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Home") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/technology.html" rel="noreferrer" class="footer-link"><%= gettext("Technology") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/about-us.html" rel="noreferrer" class="footer-link"><%= gettext("About Us") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/contact-us.html" rel="noreferrer" class="footer-link"><%= gettext("Contact") %></a></li>
         </ul>
       </div>
 
-      <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list" >
-        <h2>Resources</h2>
-        <ul >
-          <li><a style="color: #ffff;" href="https://gather.network/documentation.html" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Documentation") %></a></li>
-          <li><a style="color: #ffff;" href="https://gather.network/faq.html" rel="noreferrer" class="footer-link"><%= gettext("FAQ") %></a></li>
-          <li><a style="color: #ffff;" href="https://gather.network/ambassador-program.html" rel="noreferrer" class="footer-link"><%= gettext("Ambassadors Program") %></a></li>
-          <li><a style="color: #ffff;" href="https://blog.gather.network/" rel="noreferrer" class="footer-link"><%= gettext("Blog") %></a></li>
+      <div>
+        
+        <ul style="list-style-type: none;">
+          <h2 style="font-weight:300">Resources</h2>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/documentation.html" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Documentation") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/faq.html" rel="noreferrer" class="footer-link"><%= gettext("FAQ") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://gather.network/ambassador-program.html" rel="noreferrer" class="footer-link"><%= gettext("Ambassadors Program") %></a></li>
+          <li style="padding-bottom: 10px;"><a style="text-decoration: none; color: #96bde8; " onMouseOut="this.style.color='#96bde8'"  onMouseOver="this.style.color='#ffff'" href="https://blog.gather.network/" rel="noreferrer" class="footer-link"><%= gettext("Blog") %></a></li>
         </ul>
       </div>
       
