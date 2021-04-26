@@ -4,7 +4,7 @@ export DATABASE_URL=postgresql://postgres:password@localhost:5432/blockscout
 mix phx.gen.secret
 -------
 
-export SECRET_KEY_BASE=wSOjhKmpIwQ5sxzpumkkhJLHtl/kVTPCR38rFDYT0ZiPkE0CRhYyHW1PUcLIgUuu
+export SECRET_KEY_BASE=/RobcPBzb/R28U9W4ah8/WzVgLU91E30UmNKCFy/oDN09Wj0f7stmtOpGhTC7pe2
 
 --------
 mix phx.digest.clean
